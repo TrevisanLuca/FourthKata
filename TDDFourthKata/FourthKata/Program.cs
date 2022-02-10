@@ -6,7 +6,15 @@ namespace FourthKata
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var searcher = new CitySearcher();
+            while(true)
+            {
+                Console.Clear();
+                Console.WriteLine("Insert a search parameter:");
+                searcher.CitySearch(Console.ReadLine()).ForEach(x=>Console.WriteLine(x));
+                Console.WriteLine(Environment.NewLine + "Press any key to continue...");
+                Console.ReadKey();
+            }
         }
     }
 }
